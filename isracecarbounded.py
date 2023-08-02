@@ -52,27 +52,20 @@ This will yield true even though it doesn't form a circle in the first execution
 after multiple executations, it will eventually reach the starting position of [0,0] 
 and form a loop after the 4th execution. Figure out why it's after the 4th execution.
     """
-
 class Solution:
     def isracecarbounded(self, instructions):
-        # Initialize the current position and direction of the racecar.
-        initial_pos = [0, 0]
-        cur_pos = [0, 0]
-        cur_dir = 2
-
-        # Iterate over the instructions one by one.
-        for instruction in instructions:
-            if instruction == "G":
-                cur_pos[0] += 1 if cur_dir == 3 else -1 if cur_dir == 1 else 0
-                cur_pos[1] += 1 if cur_dir == 2 else -1 if cur_dir == 0 else 0
-            elif instruction == "L":
-                cur_dir = (cur_dir +1) % 4
-            else:
-                cur_dir = (cur_dir - 1) % 4
-        if cur_pos == initial_pos:
-            return True
-        else:
-            return False
+            #type instructions: string
+            #return type: boolean
+            initial_pos=[0,0]
+            cur_pos=[0,0]
+            #direction= ['S':0,'W':1,'N':2,'E':3] Reference for cur_dir (current direction)
+            cur_dir=2
+            
+            #TODO: Write code below to returnn a boolean value with the solution to the prompt.
+            return not instructions.count('R')==instructions.count('L')
+            
+            
+        
 def main():
     input1=input()
     tc1 = Solution()
