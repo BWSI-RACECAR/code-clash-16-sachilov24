@@ -66,9 +66,9 @@ class Solution:
                 cur_pos[0] += 1 if cur_dir == 3 else -1 if cur_dir == 1 else 0
                 cur_pos[1] += 1 if cur_dir == 2 else -1 if cur_dir == 0 else 0
             elif instruction == "L":
-                cur_dir = (cur_dir - 1) % 4
+                cur_dir = (cur_dir +1) % 4
             else:
-                cur_dir = (cur_dir + 1) % 4
+                cur_dir = (cur_dir - 1) % 4
         if cur_pos == initial_pos:
             return True
         else:
